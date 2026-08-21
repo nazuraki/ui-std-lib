@@ -1,0 +1,54 @@
+/* neon-butterfly — button */
+.nb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nb-space-2);
+  padding: var(--nb-space-2) var(--nb-space-3);
+  background: var(--nb-surface-glass);
+  border: 1px solid var(--nb-border);
+  border-radius: var(--nb-radius);
+  color: var(--nb-on-surface);
+  text-transform: uppercase;
+  font-family: var(--nb-font-mono);
+  font-weight: var(--nb-font-weight-bold);
+  font-size: var(--nb-text-sm);
+  letter-spacing: var(--nb-tracking-wide);
+  cursor: pointer;
+  transition:
+    border-color var(--nb-transition),
+    color var(--nb-transition);
+}
+.nb-btn:hover,
+.nb-btn:focus-visible {
+  border-color: var(--nb-primary-border);
+  color: var(--nb-primary);
+  animation: nb-pulse-glow 2s infinite;
+  outline: none;
+}
+.nb-btn--primary {
+  border-color: var(--nb-primary-border);
+  color: var(--nb-primary);
+}
+.nb-btn--accent {
+  border-color: var(--nb-accent);
+  color: var(--nb-accent);
+}
+.nb-btn--danger {
+  border-color: var(--nb-danger);
+  color: var(--nb-danger);
+}
+.nb-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nb-btn {
+    transition: none;
+  }
+  .nb-btn:hover,
+  .nb-btn:focus-visible {
+    animation: none;
+  }
+}

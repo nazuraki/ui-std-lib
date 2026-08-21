@@ -1,0 +1,17 @@
+/* neon-butterfly — badge */
+.nb-badge {
+  display: inline-block;
+  padding: 0.15rem var(--nb-space-2);
+  border: 1px solid var(--nb-border);
+  border-radius: var(--nb-radius);
+  color: var(--nb-faint);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: var(--nb-font-weight-bold);
+  letter-spacing: var(--nb-tracking-wide);
+}
+.nb-badge--primary { border-color: var(--nb-primary-border); color: var(--nb-primary); }
+.nb-badge--info    { border-color: var(--nb-info);    color: var(--nb-info); }
+.nb-badge--success { border-color: var(--nb-success); color: var(--nb-success); }
+.nb-badge--warning { border-color: var(--nb-warning); color: var(--nb-warning); }
+.nb-badge--danger  { border-color: var(--nb-danger);  color: var(--nb-danger); }

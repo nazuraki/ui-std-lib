@@ -1,0 +1,27 @@
+/* neon-butterfly — table */
+.nb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--nb-text-sm);
+  color: var(--nb-on-surface);
+}
+.nb-table th {
+  padding: var(--nb-space-2) var(--nb-space-3);
+  border-bottom: 1px solid var(--nb-primary-border);
+  color: var(--nb-faint);
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: var(--nb-font-weight-bold);
+  letter-spacing: var(--nb-tracking-wide);
+}
+.nb-table td {
+  padding: var(--nb-space-2) var(--nb-space-3);
+  border-bottom: 1px solid var(--nb-border);
+}
+.nb-table tbody tr {
+  transition: background var(--nb-transition);
+}
+.nb-table tbody tr:hover {
+  background: var(--nb-surface-glass);
+}

@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /** Visual emphasis. Maps to .nb-btn--{variant}. */
-  variant?: "default" | "primary" | "accent";
+  variant?: "default" | "primary" | "accent" | "danger";
 }
 
 export function Button({ variant = "default", className, ...rest }: ButtonProps) {
