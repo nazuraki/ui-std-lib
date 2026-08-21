@@ -1,0 +1,41 @@
+/* neon-butterfly — progress bar & spinner */
+.nb-progress {
+  display: block;
+  width: 100%;
+  height: 0.5rem;
+  background: var(--nb-surface);
+  border: 1px solid var(--nb-border);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.nb-progress__bar {
+  height: 100%;
+  background: var(--nb-primary);
+  box-shadow: 0 0 8px var(--nb-primary-glow);
+  border-radius: 1rem;
+  transition: width var(--nb-transition);
+}
+.nb-progress__bar--accent {
+  background: var(--nb-accent);
+  box-shadow: 0 0 8px var(--nb-accent-glow);
+}
+
+.nb-spinner {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--nb-border);
+  border-top-color: var(--nb-primary);
+  border-radius: 50%;
+  animation: nb-spin 0.8s linear infinite;
+}
+@keyframes nb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nb-spinner {
+    animation-duration: 2s;
+  }
+}

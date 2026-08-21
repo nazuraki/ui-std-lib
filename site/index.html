@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ui-std-lib</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@450;700&display=swap" rel="stylesheet">
+<link id="theme-css" rel="stylesheet" href="styles/neon-butterfly/index.css">
+<style>
+  /* showcase chrome only — component styling comes entirely from the theme */
+  body { padding: 2rem 1rem 4rem; }
+  main { max-width: 56rem; margin: 0 auto; display: grid; gap: 2.5rem; }
+  header.page { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  header.page h1 { margin: 0; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  .picker { display: flex; align-items: center; gap: 0.5rem; }
+  .picker .nb-select { width: auto; }
+  section h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.7; margin: 0 0 1rem; }
+  .row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 40rem) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <header class="page">
+    <h1>ui-std-lib</h1>
+    <label class="picker">
+      <span class="nb-label" style="margin:0">style</span>
+      <select id="style-select" class="nb-select"></select>
+    </label>
+  </header>
+
+  <section>
+    <h2>Buttons</h2>
+    <div class="row">
+      <button class="nb-btn">Default</button>
+      <button class="nb-btn nb-btn--primary">Primary</button>
+      <button class="nb-btn nb-btn--accent">Accent</button>
+      <button class="nb-btn nb-btn--danger">Danger</button>
+      <button class="nb-btn" disabled>Disabled</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Nav links</h2>
+    <div class="grid2">
+      <a class="nb-link" href="#">switchboard</a>
+      <a class="nb-link" href="#">backplane</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Card</h2>
+    <div class="nb-card">
+      <p>A frosted-glass surface for grouped content. Borders stay faint until the content inside needs attention.</p>
+      <div class="row">
+        <span class="nb-badge nb-badge--primary">primary</span>
+        <span class="nb-badge nb-badge--success">success</span>
+        <span class="nb-badge nb-badge--warning">warning</span>
+        <span class="nb-badge nb-badge--danger">danger</span>
+        <span class="nb-badge nb-badge--info">info</span>
+        <span class="nb-badge">neutral</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Form</h2>
+    <div class="nb-card">
+      <div class="grid2">
+        <div class="nb-field">
+          <label class="nb-label" for="f-name">Name</label>
+          <input id="f-name" class="nb-input" placeholder="lorepath">
+        </div>
+        <div class="nb-field">
+          <label class="nb-label" for="f-kind">Kind</label>
+          <select id="f-kind" class="nb-select"><option>app</option><option>service</option><option>library</option></select>
+        </div>
+      </div>
+      <div class="nb-field">
+        <label class="nb-label" for="f-desc">Description</label>
+        <textarea id="f-desc" class="nb-textarea" rows="2" placeholder="What does it do?"></textarea>
+      </div>
+      <div class="row">
+        <label class="nb-choice"><input type="checkbox" class="nb-checkbox" checked> deploy</label>
+        <label class="nb-choice"><input type="radio" name="env" class="nb-radio" checked> lan</label>
+        <label class="nb-choice"><input type="radio" name="env" class="nb-radio"> edge</label>
+        <label class="nb-choice"><input type="checkbox" role="switch" class="nb-switch" checked> monitoring</label>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Alerts</h2>
+    <div style="display:grid;gap:1rem">
+      <div class="nb-alert nb-alert--info"><span class="nb-alert__title">Info</span>Deploy queued behind two other jobs.</div>
+      <div class="nb-alert nb-alert--success"><span class="nb-alert__title">Success</span>backplane rolled out cleanly.</div>
+      <div class="nb-alert nb-alert--warning"><span class="nb-alert__title">Warning</span>Certificate renews in 3 days.</div>
+      <div class="nb-alert nb-alert--danger"><span class="nb-alert__title">Danger</span>Health check failing on usr.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tabs</h2>
+    <div id="tabs-demo">
+      <div class="nb-tabs" role="tablist">
+        <button class="nb-tab nb-tab--active" role="tab" aria-selected="true">Overview</button>
+        <button class="nb-tab" role="tab" aria-selected="false">Logs</button>
+        <button class="nb-tab" role="tab" aria-selected="false">Settings</button>
+      </div>
+      <div class="nb-tabpanel">Active tabs glow in the primary color; idle tabs stay faint.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Table</h2>
+    <table class="nb-table">
+      <thead><tr><th>App</th><th>Framework</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>vigil</td><td>react</td><td><span class="nb-badge nb-badge--success">live</span></td></tr>
+        <tr><td>lorepath</td><td>svelte → react</td><td><span class="nb-badge nb-badge--warning">migrating</span></td></tr>
+        <tr><td>switchboard</td><td>static</td><td><span class="nb-badge nb-badge--success">live</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Progress &amp; dialog</h2>
+    <div class="nb-card">
+      <div class="row" style="margin-bottom:1rem">
+        <span class="nb-spinner"></span>
+        <div class="nb-progress" style="flex:1"><div class="nb-progress__bar" style="width:65%"></div></div>
+        <div class="nb-progress" style="flex:1"><div class="nb-progress__bar nb-progress__bar--accent" style="width:30%"></div></div>
+      </div>
+      <button class="nb-btn nb-btn--primary" onclick="document.getElementById('demo-dialog').showModal()">Open dialog</button>
+    </div>
+    <dialog id="demo-dialog" class="nb-dialog">
+      <h2 class="nb-dialog__title">Confirm deploy</h2>
+      <p>Roll out backplane v0.4.2 to the lan environment?</p>
+      <div class="nb-dialog__actions">
+        <button class="nb-btn" onclick="this.closest('dialog').close()">Cancel</button>
+        <button class="nb-btn nb-btn--accent" onclick="this.closest('dialog').close()">Deploy</button>
+      </div>
+    </dialog>
+  </section>
+</main>
+
+<script>
+  const STYLES = ["neon-butterfly"]; // add new themes here as styles/<name>/ lands
+  const select = document.getElementById("style-select");
+  for (const s of STYLES) select.add(new Option(s, s));
+  select.value = new URLSearchParams(location.search).get("style") ?? STYLES[0];
+  const apply = () => {
+    document.getElementById("theme-css").href = `styles/${select.value}/index.css`;
+    history.replaceState(null, "", `?style=${select.value}`);
+  };
+  select.addEventListener("change", apply);
+  apply();
+
+  // minimal tab behavior for the static demo
+  document.querySelectorAll("#tabs-demo .nb-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll("#tabs-demo .nb-tab").forEach((t) => {
+        t.classList.toggle("nb-tab--active", t === tab);
+        t.setAttribute("aria-selected", String(t === tab));
+      });
+    });
+  });
+</script>
+</body>
+</html>

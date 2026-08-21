@@ -8,11 +8,18 @@ Shared UX/design system for nazuraki apps. Two layers:
 - **`components/react/`** (`@nazuraki/ui-react`) — React components that render
   the style layer's classes. For behavior-heavy UI as apps standardize on React.
 
+**Showcase:** https://nazuraki.github.io/ui-std-lib/ — every component rendered
+live, with a style selector. Deployed from `site/` on push to main.
+
 ## Themes
 
 | Theme | Description |
 | --- | --- |
 | `neon-butterfly` | Dark navy + lilac + neon lime, JetBrains Mono, glass surfaces with glow hovers. Derived from the switchboard landing page. |
+
+Each theme ships a `design.md` — a Stitch-compatible written spec of the
+aesthetic (palette, typography, shape rules, component inventory). Read it
+before designing new screens; feed it to Stitch to generate on-system mockups.
 
 ## Consuming
 
@@ -62,11 +69,19 @@ pnpm build
 Tag `v*` on main → the `publish` workflow builds and publishes both packages to
 GitHub Packages. Bump versions in the package manifests before tagging.
 
+## Agent skill
+
+[skills/design-system/SKILL.md](skills/design-system/SKILL.md) teaches coding
+agents to consume this system instead of writing ad-hoc styles. Install it in
+an app repo by symlinking or copying into `.claude/skills/design-system/`.
+
 ## Layout
 
 ```
 styles/                    @nazuraki/styles
-  neon-butterfly/          tokens.css, base.css, components.css, index.css
+  neon-butterfly/          tokens.css, base.css, components/*.css, index.css, design.md
 components/
   react/                   @nazuraki/ui-react (tsc → dist/)
+site/                      GH Pages showcase (no build; styles copied in by CI)
+skills/design-system/      agent skill for consuming the system
 ```

@@ -18,6 +18,12 @@
   --nb-accent-glow: rgba(57, 255, 20, 0.5);
   --nb-border: rgba(255, 255, 255, 0.1);
 
+  /* semantic color */
+  --nb-info: #4dc9ff;
+  --nb-success: #39ff14;
+  --nb-warning: #ffd23f;
+  --nb-danger: #ff2d78;
+
   /* typography */
   --nb-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --nb-font-weight: 450;
