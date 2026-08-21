@@ -1,15 +1,15 @@
 {
   "name": "@nazuraki/styles",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Shared design-system styles: tokens, base styles, and component classes per theme.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nazuraki/ui-std-lib.git",
+    "url": "git+https://github.com/nazuraki/ui-std-lib.git",
     "directory": "styles"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "files": [
     "neon-butterfly"

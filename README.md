@@ -23,12 +23,8 @@ before designing new screens; feed it to Stitch to generate on-system mockups.
 
 ## Consuming
 
-Packages publish to the GitHub Packages npm registry. One-time consumer setup
-in the app's `.npmrc`:
-
-```
-@nazuraki:registry=https://npm.pkg.github.com
-```
+Packages publish to the public npm registry (`@nazuraki/styles`,
+`@nazuraki/ui-react`) — no registry config or auth needed to install.
 
 ### Styles (any app)
 
@@ -41,7 +37,7 @@ No-build apps can pull from jsDelivr instead:
 
 ```html
 <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/nazuraki/ui-std-lib@v0.1.0/styles/neon-butterfly/index.css">
+  href="https://cdn.jsdelivr.net/gh/nazuraki/ui-std-lib@v0.2.1/styles/neon-butterfly/index.css">
 ```
 
 The JetBrains Mono webfont is not bundled; include the Google Fonts link
@@ -67,7 +63,9 @@ pnpm build
 ## Publishing
 
 Tag `v*` on main → the `publish` workflow builds and publishes both packages to
-GitHub Packages. Bump versions in the package manifests before tagging.
+npmjs via trusted publishing (OIDC, no stored token; each package's npm
+settings name this repo + `publish.yml` as its trusted publisher). Bump
+versions in both package manifests before tagging.
 
 ## Agent skill
 
