@@ -1,0 +1,23 @@
+{
+  "name": "@nazuraki/styles",
+  "version": "0.1.0",
+  "description": "Shared design-system styles: tokens, base styles, and component classes per theme.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nazuraki/ui-std-lib.git",
+    "directory": "styles"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "neon-butterfly"
+  ],
+  "exports": {
+    "./neon-butterfly": "./neon-butterfly/index.css",
+    "./neon-butterfly/tokens": "./neon-butterfly/tokens.css",
+    "./neon-butterfly/base": "./neon-butterfly/base.css",
+    "./neon-butterfly/components": "./neon-butterfly/components.css"
+  }
+}

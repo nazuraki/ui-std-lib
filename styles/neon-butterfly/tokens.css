@@ -1,0 +1,39 @@
+/* neon-butterfly — design tokens
+ * Source of truth for the neon-butterfly theme. Consume via:
+ *   @import "@nazuraki/styles/neon-butterfly/tokens";
+ * or pull the whole theme with ./index.css.
+ */
+:root {
+  /* color */
+  --nb-bg: #0b1326;
+  --nb-bg-blend: #1a1f2e;
+  --nb-surface: #171f33;
+  --nb-surface-glass: rgba(23, 31, 51, 0.75);
+  --nb-on-surface: #dae2fd;
+  --nb-faint: #958da1;
+  --nb-primary: #d2bbff;
+  --nb-primary-glow: rgba(210, 187, 255, 0.6);
+  --nb-primary-border: rgba(210, 187, 255, 0.8);
+  --nb-accent: #39ff14;
+  --nb-accent-glow: rgba(57, 255, 20, 0.5);
+  --nb-border: rgba(255, 255, 255, 0.1);
+
+  /* typography */
+  --nb-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --nb-font-weight: 450;
+  --nb-font-weight-bold: 700;
+  --nb-text-sm: 14px;
+  --nb-tracking-wide: 0.1em;
+
+  /* shape & effects */
+  --nb-radius: 0.5rem;
+  --nb-blur: 12px;
+  --nb-transition: 0.3s;
+
+  /* spacing */
+  --nb-space-1: 0.25rem;
+  --nb-space-2: 0.5rem;
+  --nb-space-3: 1rem;
+  --nb-space-4: 1.5rem;
+  --nb-space-5: 2rem;
+}
