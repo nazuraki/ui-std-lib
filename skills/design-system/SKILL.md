@@ -32,7 +32,7 @@ import "@nazuraki/styles/neon-butterfly";
 import { Button, Card, Dialog, Tabs, Field, Input, Alert } from "@nazuraki/ui-react";
 ```
 
-`.npmrc`: `@nazuraki:registry=https://npm.pkg.github.com`
+Both packages are on the public npm registry — no `.npmrc` needed.
 
 Plain HTML / no-build apps (jsDelivr, pin a tag):
 

@@ -1,15 +1,15 @@
 {
   "name": "@nazuraki/ui-react",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Shared React components styled by @nazuraki/styles themes.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nazuraki/ui-std-lib.git",
+    "url": "git+https://github.com/nazuraki/ui-std-lib.git",
     "directory": "components/react"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "type": "module",
   "files": [
