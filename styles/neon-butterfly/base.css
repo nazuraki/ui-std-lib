@@ -18,6 +18,14 @@ body {
   font-weight: var(--nb-font-weight);
 }
 
+/* Opt-in page background: the butterfly circuit artwork blended into the navy.
+ * Matches the switchboard landing page. Apply to <body>. */
+.nb-bg {
+  background: var(--nb-bg) url("./assets/butterfly-circuit.png") center / cover fixed;
+  background-blend-mode: luminosity;
+  background-color: var(--nb-bg-blend);
+}
+
 a {
   color: var(--nb-primary);
 }

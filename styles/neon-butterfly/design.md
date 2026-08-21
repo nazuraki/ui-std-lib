@@ -22,6 +22,10 @@ should feel like a beautiful command console, not a document.
 | Danger | `#ff2d78` | Destructive actions, errors |
 | Border | `rgba(255,255,255,0.1)` | All resting borders |
 
+The signature page background is the butterfly-circuit artwork
+(`assets/butterfly-circuit.png`) blended into the navy with `luminosity` —
+apply via `.nb-bg` on `<body>`. Optional; plain `--nb-bg` navy is also correct.
+
 Rules: color is communication — resting UI stays in navy/faint; lilac and lime
 appear only on interaction or state. Never use pure white or pure black.
 
