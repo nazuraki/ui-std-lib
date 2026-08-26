@@ -1,0 +1,34 @@
+/* summer-cloud — table: mono header labels, sky-tint row hover */
+.nb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--nb-text-sm);
+  color: var(--nb-on-surface);
+}
+.nb-table th {
+  padding: var(--nb-space-3);
+  border-bottom: 1px solid var(--nb-outline);
+  color: var(--nb-faint);
+  text-align: left;
+  text-transform: uppercase;
+  font-family: var(--nb-font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: var(--nb-tracking-wide);
+}
+.nb-table td {
+  padding: var(--nb-space-3);
+  border-bottom: 1px solid rgba(201, 195, 218, 0.4);
+}
+.nb-table tbody tr {
+  transition: background var(--nb-transition);
+}
+.nb-table tbody tr:hover {
+  background: var(--nb-sky-tint);
+}
+/* Numeric cells take the mono voice — prices and data read as utility-grade. */
+.nb-table td.nb-num,
+.nb-table th.nb-num {
+  font-family: var(--nb-font-mono);
+  text-align: right;
+}

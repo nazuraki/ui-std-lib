@@ -6,7 +6,10 @@
 <title>ui-std-lib</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@450;700&display=swap" rel="stylesheet">
+<!-- webfonts for every theme: neon-butterfly (JetBrains Mono), summer-cloud (Plus Jakarta Sans + Inter + JetBrains Mono) -->
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@450;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link id="theme-css" rel="stylesheet" href="styles/neon-butterfly/index.css">
 <style>
   /* showcase chrome only — component styling comes entirely from the theme */
@@ -148,7 +151,7 @@
 </main>
 
 <script>
-  const STYLES = ["neon-butterfly"]; // add new themes here as styles/<name>/ lands
+  const STYLES = ["neon-butterfly", "summer-cloud"]; // add new themes here as styles/<name>/ lands
   const select = document.getElementById("style-select");
   for (const s of STYLES) select.add(new Option(s, s));
   select.value = new URLSearchParams(location.search).get("style") ?? STYLES[0];

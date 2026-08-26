@@ -16,6 +16,7 @@ live, with a style selector. Deployed from `site/` on push to main.
 | Theme | Description |
 | --- | --- |
 | `neon-butterfly` | Dark navy + lilac + neon lime, JetBrains Mono, glass surfaces with glow hovers. Derived from the switchboard landing page. |
+| `summer-cloud` | Light sky gradient + vivid violet + sky blue, Plus Jakarta Sans / Inter / JetBrains Mono, frosted glass with bouncy pill buttons. Derived from the Summer Cloud retail UI system. |
 
 Each theme ships a `design.md` — a Stitch-compatible written spec of the
 aesthetic (palette, typography, shape rules, component inventory). Read it
@@ -31,6 +32,7 @@ Packages publish to the public npm registry (`@nazuraki/styles`,
 ```css
 @import "@nazuraki/styles/neon-butterfly";        /* full theme */
 @import "@nazuraki/styles/neon-butterfly/tokens"; /* tokens only */
+@import "@nazuraki/styles/summer-cloud";          /* or the light retail theme */
 ```
 
 No-build apps can pull from jsDelivr instead:
@@ -40,9 +42,16 @@ No-build apps can pull from jsDelivr instead:
   href="https://cdn.jsdelivr.net/gh/nazuraki/ui-std-lib@v0.2.1/styles/neon-butterfly/index.css">
 ```
 
-The JetBrains Mono webfont is not bundled; include the Google Fonts link
-(weights 450 + 700) or self-host it. The font stack falls back to
-`ui-monospace`.
+Webfonts are not bundled; include the Google Fonts links or self-host. Every
+font stack falls back to a system family.
+
+| Theme | Fonts |
+| --- | --- |
+| `neon-butterfly` | JetBrains Mono (450, 700) |
+| `summer-cloud` | Plus Jakarta Sans (400, 600, 700, 800), Inter (400, 600), JetBrains Mono (500) |
+
+`summer-cloud` also expects `.nb-bg` on `<body>` — the sky gradient is what its
+frosted-glass surfaces read against.
 
 ### React components
 
@@ -78,6 +87,7 @@ an app repo by symlinking or copying into `.claude/skills/design-system/`.
 ```
 styles/                    @nazuraki/styles
   neon-butterfly/          tokens.css, base.css, components/*.css, index.css, design.md
+  summer-cloud/            same layout, same --nb-* token names, different values
 components/
   react/                   @nazuraki/ui-react (tsc → dist/)
 site/                      GH Pages showcase (no build; styles copied in by CI)

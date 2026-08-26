@@ -1,0 +1,29 @@
+/* summer-cloud — alert / callout: glass card with a semantic left rule */
+.nb-alert {
+  padding: var(--nb-space-4);
+  background: var(--nb-surface-glass);
+  border: 1px solid var(--nb-border);
+  border-left: 4px solid var(--nb-accent);
+  border-radius: var(--nb-radius);
+  backdrop-filter: blur(var(--nb-blur));
+  -webkit-backdrop-filter: blur(var(--nb-blur));
+  box-shadow: var(--nb-shadow-soft);
+  color: var(--nb-on-surface);
+  font-size: var(--nb-text-sm);
+}
+.nb-alert--info    { border-left-color: var(--nb-info); }
+.nb-alert--success { border-left-color: var(--nb-success); }
+.nb-alert--warning { border-left-color: var(--nb-warning); }
+.nb-alert--danger  { border-left-color: var(--nb-danger); }
+.nb-alert__title {
+  display: block;
+  margin-bottom: var(--nb-space-1);
+  font-family: var(--nb-font-display);
+  font-weight: var(--nb-font-weight-medium);
+  font-size: var(--nb-text-sm);
+  color: var(--nb-on-surface);
+}
+.nb-alert--info .nb-alert__title    { color: var(--nb-accent-deep); }
+.nb-alert--success .nb-alert__title { color: #1a7a1a; }
+.nb-alert--warning .nb-alert__title { color: #594400; }
+.nb-alert--danger .nb-alert__title  { color: #93000a; }

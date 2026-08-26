@@ -1,0 +1,60 @@
+/* summer-cloud — nav link: pill that fills with sky tint, arrow slides out */
+.nb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nb-space-2);
+  padding: var(--nb-space-2) var(--nb-space-3);
+  border: 1px solid transparent;
+  border-radius: var(--nb-radius-pill);
+  color: var(--nb-faint);
+  text-decoration: none;
+  font-family: var(--nb-font-display);
+  font-weight: var(--nb-font-weight-medium);
+  font-size: var(--nb-text-sm);
+  transition:
+    background var(--nb-transition),
+    color var(--nb-transition);
+}
+.nb-link::after {
+  content: "→";
+  color: var(--nb-accent);
+  transition: transform var(--nb-transition);
+}
+.nb-link:hover,
+.nb-link:focus-visible {
+  background: var(--nb-sky-tint);
+  color: var(--nb-primary);
+  outline: none;
+}
+.nb-link:hover::after,
+.nb-link:focus-visible::after {
+  transform: translateX(4px);
+}
+.nb-link:active {
+  transform: scale(0.95);
+}
+
+/* Current page: violet with the underline rule from the top nav. */
+.nb-link--active,
+.nb-link[aria-current="page"] {
+  background: none;
+  border-radius: 0;
+  border-bottom: 2px solid var(--nb-primary);
+  color: var(--nb-primary);
+}
+.nb-link--active::after,
+.nb-link[aria-current="page"]::after {
+  content: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nb-link,
+  .nb-link::after {
+    transition: none;
+  }
+  .nb-link:hover::after,
+  .nb-link:focus-visible::after,
+  .nb-link:active {
+    transform: none;
+  }
+}

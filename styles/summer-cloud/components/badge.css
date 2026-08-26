@@ -1,0 +1,49 @@
+/* summer-cloud — badge: solid pill, mono uppercase, for retail energy */
+.nb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nb-space-1);
+  padding: 0.25rem 0.75rem;
+  background: var(--nb-surface-glass-high);
+  border: 1px solid var(--nb-border);
+  border-radius: var(--nb-radius-pill);
+  color: var(--nb-faint);
+  text-transform: uppercase;
+  font-family: var(--nb-font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: var(--nb-tracking-wide);
+  box-shadow: 0 1px 2px rgba(93, 43, 255, 0.06);
+}
+.nb-badge--primary { background: var(--nb-primary);  border-color: transparent; color: #fff; }
+.nb-badge--info    { background: var(--nb-info);     border-color: transparent; color: #004261; }
+.nb-badge--success { background: var(--nb-success);  border-color: transparent; color: #0a2e0a; }
+.nb-badge--warning { background: var(--nb-warning);  border-color: transparent; color: #241a00; }
+.nb-badge--danger  { background: var(--nb-danger);   border-color: transparent; color: #4a0000; }
+
+/* Chip — the filter variant: outlined until selected. */
+.nb-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nb-space-1);
+  padding: var(--nb-space-2) var(--nb-space-3);
+  background: none;
+  border: 1px solid var(--nb-outline);
+  border-radius: var(--nb-radius-pill);
+  color: var(--nb-faint);
+  font-family: var(--nb-font-display);
+  font-size: 12px;
+  font-weight: var(--nb-font-weight-medium);
+  cursor: pointer;
+  transition: background var(--nb-transition), color var(--nb-transition),
+    border-color var(--nb-transition);
+}
+.nb-chip:hover {
+  background: var(--nb-sky-tint);
+}
+.nb-chip--selected,
+.nb-chip[aria-pressed="true"] {
+  background: var(--nb-primary-bright);
+  border-color: transparent;
+  color: #fff;
+}
