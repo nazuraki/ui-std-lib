@@ -11,12 +11,19 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "test": "node --test"
+  },
   "files": [
     "neon-butterfly",
     "summer-cloud",
-    "luminous-precision"
+    "luminous-precision",
+    "all.css",
+    "manifest.json"
   ],
   "exports": {
+    "./all": "./all.css",
+    "./manifest": "./manifest.json",
     "./neon-butterfly": "./neon-butterfly/index.css",
     "./neon-butterfly/tokens": "./neon-butterfly/tokens.css",
     "./neon-butterfly/base": "./neon-butterfly/base.css",

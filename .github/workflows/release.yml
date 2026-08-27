@@ -44,5 +44,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
-          chmod +x .github/scripts/release.sh
+          chmod +x .github/scripts/release.sh .github/scripts/next-version.sh
           .github/scripts/release.sh
