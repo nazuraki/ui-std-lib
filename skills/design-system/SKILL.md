@@ -17,9 +17,8 @@ component styles in an app — consume the system.
 2. **Existing components first.** Before building UI, check the component
    inventory below. App-local components are only for genuinely app-specific
    composites — and should still be built from `nb-*` classes.
-3. **Read the style's `design.md`** (e.g. `styles/neon-butterfly/design.md`)
-   before designing new screens — it states the aesthetic rules (when lilac vs
-   lime, uppercase conventions, glow-not-shadow elevation).
+3. **Read the style's `design.md`** before designing new screens — it states
+   the aesthetic rules that the CSS alone does not encode.
 4. **Gaps go upstream.** A missing component belongs in `ui-std-lib` as a PR,
    not in the app. File an issue on `nazuraki/ui-std-lib` if not building it now.
 
@@ -28,9 +27,13 @@ component styles in an app — consume the system.
 React apps:
 
 ```tsx
-import "@nazuraki/styles/neon-butterfly";
+import "@nazuraki/styles/neon-butterfly"; // or "@nazuraki/styles/summer-cloud"
 import { Button, Card, Dialog, Tabs, Field, Input, Alert } from "@nazuraki/ui-react";
 ```
+
+Themes are drop-in swappable: both define the same `--nb-*` tokens and the same
+`nb-*` classes, so switching the CSS import restyles the app without touching
+markup.
 
 Both packages are on the public npm registry — no `.npmrc` needed.
 
@@ -40,8 +43,10 @@ Plain HTML / no-build apps (jsDelivr, pin a tag):
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nazuraki/ui-std-lib@main/styles/neon-butterfly/index.css">
 ```
 
-Include the JetBrains Mono webfont link (weights 450 + 700) — the system does
-not bundle fonts.
+Include the theme's webfont links — the system does not bundle fonts.
+`neon-butterfly` needs JetBrains Mono (450, 700); `summer-cloud` needs Plus
+Jakarta Sans (400, 600, 700, 800), Inter (400, 600), and JetBrains Mono (500),
+plus `.nb-bg` on `<body>` for its sky gradient.
 
 ## Component inventory
 
@@ -62,6 +67,10 @@ non-React apps):
 | `Progress`/`Spinner` | `.nb-progress`/`.nb-spinner` | |
 | — (CSS only) | `.nb-table` | style `<table>` directly |
 
+Theme-specific additions (styled only under that theme — check before using):
+`summer-cloud` adds `.nb-chip` (filter chip, `--selected`), `.nb-card--floating`,
+`.nb-btn--ghost`, and `.nb-num` for numeric table cells.
+
 Visual reference: the GH Pages showcase for this repo renders every component
 per style.
 
@@ -69,5 +78,11 @@ per style.
 
 Copy the `styles/neon-butterfly/` layout: `tokens.css` (same `--nb-*` names,
 different values), `base.css`, `components/*.css`, `index.css`, and a
-`design.md` capturing the aesthetic. Register it in `site/index.html`'s
-`STYLES` array.
+`design.md` capturing the aesthetic. Then register it in three places:
+
+1. `styles/package.json` — add the directory to `files` and its four `exports`
+   entries (theme, `/tokens`, `/base`, `/components/*`).
+2. `site/index.html` — the `STYLES` array, plus any webfont `<link>`s.
+3. `README.md` — the themes table.
+
+The GH Pages workflow copies `styles/*/` automatically; no CI change needed.

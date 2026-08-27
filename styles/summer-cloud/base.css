@@ -1,0 +1,48 @@
+/* summer-cloud — base styles
+ * Global defaults. Requires tokens.css. Apps that need the webfonts should
+ * include the Google Fonts <link>s for Plus Jakarta Sans (400;600;700;800),
+ * Inter (400;600) and JetBrains Mono (500;700), or self-host; every token
+ * stack falls back to a system family.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--nb-bg);
+  color: var(--nb-on-surface);
+  font-family: var(--nb-font-body);
+  font-weight: var(--nb-font-weight);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Opt-in page background: the sky gradient. Flat --nb-bg is also correct, but
+ * the gradient is the signature — the theme reads as "airy" only against it.
+ * Apply to <body>. */
+.nb-bg {
+  background: linear-gradient(135deg, var(--nb-sky-start) 0%, var(--nb-sky-end) 100%);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--nb-font-display);
+  font-weight: var(--nb-font-weight-bold);
+  letter-spacing: var(--nb-tracking-tight);
+  color: var(--nb-on-surface);
+}
+
+a {
+  color: var(--nb-primary);
+}
+
+::selection {
+  background: var(--nb-primary);
+  color: #fff;
+}

@@ -12,12 +12,17 @@
     "access": "public"
   },
   "files": [
-    "neon-butterfly"
+    "neon-butterfly",
+    "summer-cloud"
   ],
   "exports": {
     "./neon-butterfly": "./neon-butterfly/index.css",
     "./neon-butterfly/tokens": "./neon-butterfly/tokens.css",
     "./neon-butterfly/base": "./neon-butterfly/base.css",
-    "./neon-butterfly/components/*": "./neon-butterfly/components/*.css"
+    "./neon-butterfly/components/*": "./neon-butterfly/components/*.css",
+    "./summer-cloud": "./summer-cloud/index.css",
+    "./summer-cloud/tokens": "./summer-cloud/tokens.css",
+    "./summer-cloud/base": "./summer-cloud/base.css",
+    "./summer-cloud/components/*": "./summer-cloud/components/*.css"
   }
 }

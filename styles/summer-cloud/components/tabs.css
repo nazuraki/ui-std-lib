@@ -1,0 +1,38 @@
+/* summer-cloud — tabs: violet underline on the active tab, sky tint on hover */
+.nb-tabs {
+  display: flex;
+  gap: var(--nb-space-2);
+  border-bottom: 1px solid var(--nb-outline);
+}
+.nb-tab {
+  padding: var(--nb-space-2) var(--nb-space-3);
+  margin-bottom: -1px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: var(--nb-radius-sm) var(--nb-radius-sm) 0 0;
+  color: var(--nb-faint);
+  font-family: var(--nb-font-display);
+  font-weight: var(--nb-font-weight-medium);
+  font-size: var(--nb-text-sm);
+  cursor: pointer;
+  transition: color var(--nb-transition), background var(--nb-transition),
+    border-color var(--nb-transition);
+}
+.nb-tab:hover {
+  background: var(--nb-sky-tint);
+  color: var(--nb-primary);
+}
+.nb-tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--nb-accent-glow);
+}
+.nb-tab--active,
+.nb-tab[aria-selected="true"] {
+  color: var(--nb-primary);
+  border-bottom-color: var(--nb-primary);
+  font-weight: var(--nb-font-weight-bold);
+}
+.nb-tabpanel {
+  padding: var(--nb-space-3) 0;
+}
