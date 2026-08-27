@@ -26,7 +26,11 @@ jobs:
         run: |
           mkdir -p _dist/styles
           cp -r site/* _dist/
-          for d in styles/*/; do cp -r "$d" "_dist/styles/$(basename "$d")"; done
+          cp styles/manifest.json styles/all.css _dist/styles/
+          for d in styles/*/; do
+            [ "$(basename "$d")" = "test" ] && continue
+            cp -r "$d" "_dist/styles/$(basename "$d")"
+          done
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _dist
