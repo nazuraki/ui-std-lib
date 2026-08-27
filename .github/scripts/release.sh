@@ -43,8 +43,10 @@ last_tag=$(git tag -l "v*" | sort -V | tail -1 || true)
 
 if [[ -n "$last_tag" ]]; then
   commit_log=$(git log "${last_tag}..HEAD" --pretty=format:"%s" -- "${PATHSPEC[@]}" || true)
+  commit_bodies=$(git log "${last_tag}..HEAD" --pretty=format:"%B" -- "${PATHSPEC[@]}" || true)
 else
   commit_log=$(git log --pretty=format:"%s" -- "${PATHSPEC[@]}" || true)
+  commit_bodies=$(git log --pretty=format:"%B" -- "${PATHSPEC[@]}" || true)
 fi
 
 if [[ -z "$commit_log" ]]; then
@@ -53,8 +55,11 @@ if [[ -z "$commit_log" ]]; then
 fi
 
 # ── Bump version ──────────────────────────────────────────────────────────────
-# Patch-bump the version in each package.json. All packages share one version;
-# read it from the first file and verify the rest agree.
+# Bump the version in each package.json. All packages share one version; read
+# it from the first file and verify the rest agree. The bump level comes from
+# the unreleased commit messages (next-version.sh): a breaking marker —
+# "type!:" subject or "BREAKING CHANGE:" footer — bumps the minor while the
+# major is 0; anything else bumps the patch.
 
 current_version=$(node -p "require('./${VERSION_FILES[0]}').version")
 
@@ -66,12 +71,7 @@ for f in "${VERSION_FILES[@]}"; do
   fi
 done
 
-if [[ "$current_version" =~ ^([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
-  new_version="${BASH_REMATCH[1]}.${BASH_REMATCH[2]}.$(( BASH_REMATCH[3] + 1 ))"
-else
-  echo "ERROR: unexpected version format: ${current_version}" >&2
-  exit 1
-fi
+new_version=$(.github/scripts/next-version.sh "$current_version" <<< "$commit_bodies")
 
 for f in "${VERSION_FILES[@]}"; do
   sed -i "s|\"version\": \"${current_version}\"|\"version\": \"${new_version}\"|" "$f"

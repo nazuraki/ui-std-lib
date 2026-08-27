@@ -1,5 +1,5 @@
 /* luminous-precision — alert / callout */
-.nb-alert {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert {
   padding: var(--nb-space-3) var(--nb-space-4);
   background: var(--nb-surface-glass);
   border: 1px solid var(--nb-border);
@@ -9,18 +9,18 @@
   color: var(--nb-on-surface);
   font-size: var(--nb-text-sm);
 }
-.nb-alert--info    { border-left-color: var(--nb-info); }
-.nb-alert--success { border-left-color: var(--nb-success); }
-.nb-alert--warning { border-left-color: var(--nb-warning); }
-.nb-alert--danger  { border-left-color: var(--nb-danger); }
-.nb-alert__title {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert--info    { border-left-color: var(--nb-info); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert--success { border-left-color: var(--nb-success); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert--warning { border-left-color: var(--nb-warning); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert--danger  { border-left-color: var(--nb-danger); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert__title {
   display: block;
   margin-bottom: var(--nb-space-1);
   text-transform: uppercase;
   font-weight: var(--nb-font-weight-medium);
   letter-spacing: var(--nb-tracking-wide);
 }
-.nb-alert--info .nb-alert__title    { color: var(--nb-info); }
-.nb-alert--success .nb-alert__title { color: var(--nb-success); }
-.nb-alert--warning .nb-alert__title { color: var(--nb-warning); }
-.nb-alert--danger .nb-alert__title  { color: var(--nb-danger); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert--info .nb-alert__title    { color: var(--nb-info); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert--success .nb-alert__title { color: var(--nb-success); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert--warning .nb-alert__title { color: var(--nb-warning); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-alert--danger .nb-alert__title  { color: var(--nb-danger); }

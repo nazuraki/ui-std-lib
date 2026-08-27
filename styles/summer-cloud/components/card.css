@@ -1,5 +1,5 @@
 /* summer-cloud — card: the glassmorphic panel everything else sits in */
-.nb-card {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-card {
   padding: var(--nb-space-5);
   background: var(--nb-surface-glass);
   border: 1px solid var(--nb-border);
@@ -9,27 +9,27 @@
   box-shadow: var(--nb-shadow);
   color: var(--nb-on-surface);
 }
-.nb-card > :first-child { margin-top: 0; }
-.nb-card > :last-child { margin-bottom: 0; }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-card > :first-child { margin-top: 0; }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-card > :last-child { margin-bottom: 0; }
 
 /* Level 2 — floating: higher-opacity white, lifts on hover. Use for
  * interactive cards (products, tiles), not for static content panels. */
-.nb-card--floating {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-card--floating {
   background: var(--nb-surface-glass-high);
   backdrop-filter: blur(var(--nb-blur-high));
   -webkit-backdrop-filter: blur(var(--nb-blur-high));
   transition: transform var(--nb-transition), box-shadow var(--nb-transition);
 }
-.nb-card--floating:hover {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-card--floating:hover {
   transform: translateY(-4px);
   box-shadow: var(--nb-shadow-raised-hover);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nb-card--floating {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-card--floating {
     transition: none;
   }
-  .nb-card--floating:hover {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-card--floating:hover {
     transform: none;
   }
 }

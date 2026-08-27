@@ -1,5 +1,5 @@
 /* luminous-precision — button */
-.nb-btn {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn {
   display: inline-flex;
   align-items: center;
   gap: var(--nb-space-2);
@@ -19,55 +19,55 @@
     color var(--nb-transition),
     box-shadow var(--nb-transition);
 }
-.nb-btn:hover,
-.nb-btn:focus-visible {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn:hover,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn:focus-visible {
   border-color: var(--nb-primary-border);
   color: var(--nb-primary);
-  animation: nb-pulse-glow 2s infinite;
+  animation: nb-lp-pulse-glow 2s infinite;
   outline: none;
 }
 
 /* primary: solid orchid fill, dark text, glow pulse on hover */
-.nb-btn--primary {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--primary {
   background: var(--nb-primary);
   border-color: var(--nb-primary);
   color: var(--nb-on-primary);
 }
-.nb-btn--primary:hover,
-.nb-btn--primary:focus-visible {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--primary:hover,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--primary:focus-visible {
   border-color: var(--nb-primary);
   color: var(--nb-on-primary);
 }
 
 /* accent: teal ghost — critical navigation paths */
-.nb-btn--accent {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--accent {
   border-color: var(--nb-accent);
   color: var(--nb-accent);
 }
-.nb-btn--accent:hover,
-.nb-btn--accent:focus-visible {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--accent:hover,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--accent:focus-visible {
   border-color: var(--nb-accent);
   color: var(--nb-accent);
-  animation-name: nb-pulse-glow-accent;
+  animation-name: nb-lp-pulse-glow-accent;
 }
 
-.nb-btn--danger {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--danger {
   border-color: var(--nb-danger);
   color: var(--nb-danger);
 }
-.nb-btn--danger:hover,
-.nb-btn--danger:focus-visible {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--danger:hover,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--danger:focus-visible {
   border-color: var(--nb-danger);
   color: var(--nb-danger);
 }
 
-.nb-btn:disabled {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   animation: none;
 }
 
-@keyframes nb-pulse-glow-accent {
+@keyframes nb-lp-pulse-glow-accent {
   0%,
   100% {
     box-shadow: 0 0 5px rgba(0, 245, 255, 0.15);
@@ -78,11 +78,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nb-btn {
+  :where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn {
     transition: none;
   }
-  .nb-btn:hover,
-  .nb-btn:focus-visible {
+  :where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn:hover,
+  :where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn:focus-visible {
     animation: none;
   }
 }

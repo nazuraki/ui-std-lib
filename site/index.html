@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-nb-style="neon-butterfly">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link id="theme-css" rel="stylesheet" href="styles/neon-butterfly/index.css">
+<!-- every theme loads at once; the html data-nb-style attribute picks which one applies -->
+<link rel="stylesheet" href="styles/all.css">
 <style>
   /* showcase chrome only — component styling comes entirely from the theme */
   body { padding: 2rem 1rem 4rem; }
@@ -152,16 +153,23 @@
 </main>
 
 <script>
-  const STYLES = ["neon-butterfly", "summer-cloud", "luminous-precision"]; // add new themes here as styles/<name>/ lands
+  // The theme roster comes from the manifest — a new styles/<name>/ shows up
+  // here (and in any consumer that reads it) with no site change.
   const select = document.getElementById("style-select");
-  for (const s of STYLES) select.add(new Option(s, s));
-  select.value = new URLSearchParams(location.search).get("style") ?? STYLES[0];
   const apply = () => {
-    document.getElementById("theme-css").href = `styles/${select.value}/index.css`;
+    document.documentElement.dataset.nbStyle = select.value;
     history.replaceState(null, "", `?style=${select.value}`);
   };
-  select.addEventListener("change", apply);
-  apply();
+  fetch("styles/manifest.json")
+    .then((r) => r.json())
+    .then(({ themes }) => {
+      const names = Object.keys(themes);
+      for (const s of names) select.add(new Option(s, s));
+      const requested = new URLSearchParams(location.search).get("style");
+      select.value = names.includes(requested) ? requested : document.documentElement.dataset.nbStyle;
+      select.addEventListener("change", apply);
+      apply();
+    });
 
   // minimal tab behavior for the static demo
   document.querySelectorAll("#tabs-demo .nb-tab").forEach((tab) => {

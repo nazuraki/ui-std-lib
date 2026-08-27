@@ -1,5 +1,5 @@
 /* summer-cloud — progress bar & spinner: glowing violet indicators */
-.nb-progress {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-progress {
   display: block;
   width: 100%;
   height: 0.5rem;
@@ -7,37 +7,37 @@
   border-radius: var(--nb-radius-pill);
   overflow: hidden;
 }
-.nb-progress__bar {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-progress__bar {
   height: 100%;
   background: var(--nb-primary);
   border-radius: var(--nb-radius-pill);
   box-shadow: 0 0 10px rgba(69, 0, 217, 0.5);
   transition: width var(--nb-transition);
 }
-.nb-progress__bar--accent {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-progress__bar--accent {
   background: var(--nb-accent);
   box-shadow: 0 0 10px rgba(12, 179, 255, 0.5);
 }
 
-.nb-spinner {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-spinner {
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
   border: 2px solid var(--nb-outline);
   border-top-color: var(--nb-primary);
   border-radius: 50%;
-  animation: nb-spin 0.8s linear infinite;
+  animation: nb-sc-spin 0.8s linear infinite;
 }
-@keyframes nb-spin {
+@keyframes nb-sc-spin {
   to {
     transform: rotate(360deg);
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .nb-spinner {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-spinner {
     animation-duration: 2s;
   }
-  .nb-progress__bar {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-progress__bar {
     transition: none;
   }
 }

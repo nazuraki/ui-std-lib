@@ -1,5 +1,5 @@
 /* neon-butterfly — nav link: uppercase mono link with ">" chevron and glow hover */
-.nb-link {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-link {
   display: flex;
   align-items: baseline;
   gap: var(--nb-space-3);
@@ -19,23 +19,23 @@
     color var(--nb-transition),
     transform var(--nb-transition);
 }
-.nb-link::before {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-link::before {
   content: ">";
   color: var(--nb-faint);
   transition: color var(--nb-transition);
 }
-.nb-link:hover {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-link:hover {
   border-color: var(--nb-primary-border);
   color: var(--nb-primary);
   transform: translateX(4px);
-  animation: nb-pulse-glow 2s infinite;
+  animation: nb-nb-pulse-glow 2s infinite;
 }
-.nb-link:hover::before {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-link:hover::before {
   color: var(--nb-accent);
   text-shadow: 0 0 5px var(--nb-accent-glow);
 }
 
-@keyframes nb-pulse-glow {
+@keyframes nb-nb-pulse-glow {
   0%,
   100% {
     box-shadow: 0 0 5px rgba(210, 187, 255, 0.2);
@@ -46,10 +46,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nb-link {
+  :where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-link {
     transition: none;
   }
-  .nb-link:hover {
+  :where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-link:hover {
     animation: none;
   }
 }

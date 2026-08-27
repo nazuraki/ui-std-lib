@@ -3,16 +3,22 @@
  *   @import "@nazuraki/styles/summer-cloud/tokens";
  * or pull the whole theme with ./index.css.
  *
- * Token names mirror neon-butterfly's --nb-* contract so themes stay
- * swappable; names marked (extra) are additions this theme needs and that
- * neon-butterfly does not define.
+ * Nothing applies until an element carries data-nb-style="summer-cloud"
+ * — set it on <html> for a page, or on any container for an embedded island.
+ * The :where() keeps specificity at zero, so any consumer rule overrides.
+ *
+ * Every theme declares the same baseline token set (styles/test enforces
+ * parity); names marked (extra) are additions beyond it that only this
+ * theme's own component CSS may rely on.
  */
-:root {
+:where([data-nb-style="summer-cloud"]) {
+  color-scheme: light;
+
   /* color */
   --nb-bg: #f6fafe;
   --nb-bg-blend: #eaeef2;
   --nb-surface: #ffffff;
-  --nb-surface-sunken: #f0f4f8; /* (extra) inset fields */
+  --nb-surface-sunken: #f0f4f8; /* inset fields */
   --nb-surface-glass: rgba(255, 255, 255, 0.6);
   --nb-surface-glass-high: rgba(255, 255, 255, 0.8); /* (extra) floating tier */
   --nb-on-surface: #171c1f;
@@ -21,10 +27,12 @@
   --nb-primary-bright: #5d2bff; /* (extra) shadow/glow tint */
   --nb-primary-glow: rgba(93, 43, 255, 0.4);
   --nb-primary-border: rgba(69, 0, 217, 0.2);
+  --nb-on-primary: #ffffff; /* text on solid violet fills */
   --nb-accent: #0cb3ff;
   --nb-accent-glow: rgba(12, 179, 255, 0.2);
   --nb-accent-deep: #006492; /* (extra) readable accent text */
   --nb-border: rgba(255, 255, 255, 0.4);
+  --nb-border-lit: rgba(255, 255, 255, 0.7); /* lit top edge of glass panes */
   --nb-outline: #c9c3da; /* (extra) hairline on opaque surfaces */
 
   /* semantic color */
@@ -39,12 +47,22 @@
   --nb-sky-end: #c9e6ff;
   --nb-sky-tint: rgba(255, 255, 255, 0.7);
 
+  /* code syntax — deepened palette hues for contrast on white */
+  --nb-code-keyword: #4500d9;
+  --nb-code-string: #157a2a;
+  --nb-code-number: #9a6b00;
+  --nb-code-comment: #6e6880;
+  --nb-code-function: #006492;
+  --nb-code-variable: #cc1f1f;
+  --nb-code-type: #00877a;
+  --nb-code-meta: #484457;
+
   /* typography */
-  --nb-font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif; /* (extra) */
-  --nb-font-body: "Inter", ui-sans-serif, system-ui, sans-serif; /* (extra) */
+  --nb-font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --nb-font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --nb-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --nb-font-weight: 400;
-  --nb-font-weight-medium: 600; /* (extra) */
+  --nb-font-weight-medium: 600;
   --nb-font-weight-bold: 700;
   --nb-text-sm: 14px;
   --nb-tracking-wide: 0.05em;
@@ -53,6 +71,7 @@
   /* shape & effects */
   --nb-radius: 1rem;
   --nb-radius-sm: 0.25rem; /* (extra) */
+  --nb-radius-lg: 1.5rem; /* cards and large containers */
   --nb-radius-pill: 9999px; /* (extra) */
   --nb-blur: 12px;
   --nb-blur-high: 20px; /* (extra) */

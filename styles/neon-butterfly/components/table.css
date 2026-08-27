@@ -1,11 +1,11 @@
 /* neon-butterfly — table */
-.nb-table {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-table {
   width: 100%;
   border-collapse: collapse;
   font-size: var(--nb-text-sm);
   color: var(--nb-on-surface);
 }
-.nb-table th {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-table th {
   padding: var(--nb-space-2) var(--nb-space-3);
   border-bottom: 1px solid var(--nb-primary-border);
   color: var(--nb-faint);
@@ -15,13 +15,13 @@
   font-weight: var(--nb-font-weight-bold);
   letter-spacing: var(--nb-tracking-wide);
 }
-.nb-table td {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-table td {
   padding: var(--nb-space-2) var(--nb-space-3);
   border-bottom: 1px solid var(--nb-border);
 }
-.nb-table tbody tr {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-table tbody tr {
   transition: background var(--nb-transition);
 }
-.nb-table tbody tr:hover {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-table tbody tr:hover {
   background: var(--nb-surface-glass);
 }

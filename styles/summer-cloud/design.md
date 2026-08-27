@@ -113,3 +113,16 @@ theme-agnostic). Variants use BEM-ish modifiers (`nb-btn--primary`).
   dark text on it (4.97:1), and uses `--nb-danger-deep` for the solid
   destructive button (5.55:1 on white). Every other foreground/background pair
   in the palette clears AA.
+
+## Code syntax
+
+Tokens `--nb-code-*`, part of the baseline contract. Palette hues deepened for
+contrast on white: violet keywords, deep-green strings, deep-amber numbers,
+accent-deep functions, deep-teal types, danger-deep variables, muted-faint
+comments, faint meta.
+
+## Scoping
+
+Every rule is guarded by `data-nb-style="summer-cloud"` (self or ancestor),
+wrapped in zero-specificity `:where()`. Set the attribute on `<html>` for a
+page or on a container for an embedded island.

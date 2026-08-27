@@ -1,9 +1,9 @@
 /* luminous-precision — form controls: input, textarea, select, checkbox,
  * radio, switch. Focus drops the resting border for an electric-teal line
  * with a soft outer glow. */
-.nb-input,
-.nb-select,
-.nb-textarea {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-input,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-select,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-textarea {
   display: block;
   width: 100%;
   padding: var(--nb-space-2) var(--nb-space-3);
@@ -16,30 +16,30 @@
   font-size: var(--nb-text-sm);
   transition: border-color var(--nb-transition), box-shadow var(--nb-transition);
 }
-.nb-select {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-select {
   appearance: none;
   padding-right: 2.25rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23958e9b' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
 }
-.nb-input::placeholder,
-.nb-textarea::placeholder {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-input::placeholder,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-textarea::placeholder {
   color: var(--nb-faint);
 }
-.nb-input:focus,
-.nb-select:focus,
-.nb-textarea:focus {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-input:focus,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-select:focus,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-textarea:focus {
   outline: none;
   border-color: var(--nb-accent);
   box-shadow: 0 0 8px var(--nb-accent-glow);
 }
-.nb-input[aria-invalid="true"],
-.nb-textarea[aria-invalid="true"] {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-input[aria-invalid="true"],
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-textarea[aria-invalid="true"] {
   border-color: var(--nb-danger);
 }
 
-.nb-label {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-label {
   display: block;
   margin-bottom: var(--nb-space-1);
   color: var(--nb-faint);
@@ -49,13 +49,13 @@
   letter-spacing: var(--nb-tracking-wide);
 }
 
-.nb-field {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-field {
   margin-bottom: var(--nb-space-3);
 }
 
 /* checkbox & radio */
-.nb-checkbox,
-.nb-radio {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-checkbox,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-radio {
   appearance: none;
   width: 1.1rem;
   height: 1.1rem;
@@ -67,22 +67,22 @@
   cursor: pointer;
   transition: border-color var(--nb-transition), box-shadow var(--nb-transition);
 }
-.nb-radio {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-radio {
   border-radius: 50%;
 }
-.nb-checkbox:checked,
-.nb-radio:checked {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-checkbox:checked,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-radio:checked {
   border-color: var(--nb-accent);
   box-shadow: inset 0 0 0 3px var(--nb-surface), inset 0 0 0 1rem var(--nb-accent),
     0 0 6px var(--nb-accent-glow);
 }
-.nb-checkbox:focus-visible,
-.nb-radio:focus-visible,
-.nb-switch:focus-visible {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-checkbox:focus-visible,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-radio:focus-visible,
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-switch:focus-visible {
   outline: none;
   border-color: var(--nb-primary-border);
 }
-.nb-choice {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-choice {
   display: inline-flex;
   align-items: center;
   gap: var(--nb-space-2);
@@ -92,7 +92,7 @@
 }
 
 /* switch */
-.nb-switch {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-switch {
   appearance: none;
   width: 2.4rem;
   height: 1.3rem;
@@ -105,7 +105,7 @@
   position: relative;
   transition: border-color var(--nb-transition);
 }
-.nb-switch::after {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-switch::after {
   content: "";
   position: absolute;
   top: 2px;
@@ -116,10 +116,10 @@
   background: var(--nb-faint);
   transition: transform var(--nb-transition), background var(--nb-transition);
 }
-.nb-switch:checked {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-switch:checked {
   border-color: var(--nb-accent);
 }
-.nb-switch:checked::after {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-switch:checked::after {
   transform: translateX(1.1rem);
   background: var(--nb-accent);
   box-shadow: 0 0 6px var(--nb-accent-glow);
