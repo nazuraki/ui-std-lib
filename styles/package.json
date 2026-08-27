@@ -1,6 +1,6 @@
 {
   "name": "@nazuraki/styles",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Shared design-system styles: tokens, base styles, and component classes per theme.",
   "license": "MIT",
   "repository": {
