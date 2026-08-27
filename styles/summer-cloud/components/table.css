@@ -1,11 +1,11 @@
 /* summer-cloud — table: mono header labels, sky-tint row hover */
-.nb-table {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-table {
   width: 100%;
   border-collapse: collapse;
   font-size: var(--nb-text-sm);
   color: var(--nb-on-surface);
 }
-.nb-table th {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-table th {
   padding: var(--nb-space-3);
   border-bottom: 1px solid var(--nb-outline);
   color: var(--nb-faint);
@@ -16,19 +16,19 @@
   font-weight: 500;
   letter-spacing: var(--nb-tracking-wide);
 }
-.nb-table td {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-table td {
   padding: var(--nb-space-3);
   border-bottom: 1px solid rgba(201, 195, 218, 0.4);
 }
-.nb-table tbody tr {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-table tbody tr {
   transition: background var(--nb-transition);
 }
-.nb-table tbody tr:hover {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-table tbody tr:hover {
   background: var(--nb-sky-tint);
 }
 /* Numeric cells take the mono voice — prices and data read as utility-grade. */
-.nb-table td.nb-num,
-.nb-table th.nb-num {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-table td.nb-num,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-table th.nb-num {
   font-family: var(--nb-font-mono);
   text-align: right;
 }

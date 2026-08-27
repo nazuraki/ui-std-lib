@@ -1,5 +1,5 @@
 /* summer-cloud — alert / callout: glass card with a semantic left rule */
-.nb-alert {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert {
   padding: var(--nb-space-4);
   background: var(--nb-surface-glass);
   border: 1px solid var(--nb-border);
@@ -11,11 +11,11 @@
   color: var(--nb-on-surface);
   font-size: var(--nb-text-sm);
 }
-.nb-alert--info    { border-left-color: var(--nb-info); }
-.nb-alert--success { border-left-color: var(--nb-success); }
-.nb-alert--warning { border-left-color: var(--nb-warning); }
-.nb-alert--danger  { border-left-color: var(--nb-danger); }
-.nb-alert__title {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert--info    { border-left-color: var(--nb-info); }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert--success { border-left-color: var(--nb-success); }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert--warning { border-left-color: var(--nb-warning); }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert--danger  { border-left-color: var(--nb-danger); }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert__title {
   display: block;
   margin-bottom: var(--nb-space-1);
   font-family: var(--nb-font-display);
@@ -23,7 +23,7 @@
   font-size: var(--nb-text-sm);
   color: var(--nb-on-surface);
 }
-.nb-alert--info .nb-alert__title    { color: var(--nb-accent-deep); }
-.nb-alert--success .nb-alert__title { color: #1a7a1a; }
-.nb-alert--warning .nb-alert__title { color: #594400; }
-.nb-alert--danger .nb-alert__title  { color: #93000a; }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert--info .nb-alert__title    { color: var(--nb-accent-deep); }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert--success .nb-alert__title { color: #1a7a1a; }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert--warning .nb-alert__title { color: #594400; }
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-alert--danger .nb-alert__title  { color: #93000a; }

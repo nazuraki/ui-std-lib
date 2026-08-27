@@ -1,5 +1,5 @@
 /* summer-cloud — nav link: pill that fills with sky tint, arrow slides out */
-.nb-link {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link {
   display: inline-flex;
   align-items: center;
   gap: var(--nb-space-2);
@@ -15,46 +15,46 @@
     background var(--nb-transition),
     color var(--nb-transition);
 }
-.nb-link::after {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link::after {
   content: "→";
   color: var(--nb-accent);
   transition: transform var(--nb-transition);
 }
-.nb-link:hover,
-.nb-link:focus-visible {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link:hover,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link:focus-visible {
   background: var(--nb-sky-tint);
   color: var(--nb-primary);
   outline: none;
 }
-.nb-link:hover::after,
-.nb-link:focus-visible::after {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link:hover::after,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link:focus-visible::after {
   transform: translateX(4px);
 }
-.nb-link:active {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link:active {
   transform: scale(0.95);
 }
 
 /* Current page: violet with the underline rule from the top nav. */
-.nb-link--active,
-.nb-link[aria-current="page"] {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link--active,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link[aria-current="page"] {
   background: none;
   border-radius: 0;
   border-bottom: 2px solid var(--nb-primary);
   color: var(--nb-primary);
 }
-.nb-link--active::after,
-.nb-link[aria-current="page"]::after {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link--active::after,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link[aria-current="page"]::after {
   content: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nb-link,
-  .nb-link::after {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link,
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link::after {
     transition: none;
   }
-  .nb-link:hover::after,
-  .nb-link:focus-visible::after,
-  .nb-link:active {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link:hover::after,
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link:focus-visible::after,
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-link:active {
     transform: none;
   }
 }

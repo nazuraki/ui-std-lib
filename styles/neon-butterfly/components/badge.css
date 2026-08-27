@@ -1,5 +1,5 @@
 /* neon-butterfly — badge */
-.nb-badge {
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-badge {
   display: inline-block;
   padding: 0.15rem var(--nb-space-2);
   border: 1px solid var(--nb-border);
@@ -10,8 +10,8 @@
   font-weight: var(--nb-font-weight-bold);
   letter-spacing: var(--nb-tracking-wide);
 }
-.nb-badge--primary { border-color: var(--nb-primary-border); color: var(--nb-primary); }
-.nb-badge--info    { border-color: var(--nb-info);    color: var(--nb-info); }
-.nb-badge--success { border-color: var(--nb-success); color: var(--nb-success); }
-.nb-badge--warning { border-color: var(--nb-warning); color: var(--nb-warning); }
-.nb-badge--danger  { border-color: var(--nb-danger);  color: var(--nb-danger); }
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-badge--primary { border-color: var(--nb-primary-border); color: var(--nb-primary); }
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-badge--info    { border-color: var(--nb-info);    color: var(--nb-info); }
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-badge--success { border-color: var(--nb-success); color: var(--nb-success); }
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-badge--warning { border-color: var(--nb-warning); color: var(--nb-warning); }
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-badge--danger  { border-color: var(--nb-danger);  color: var(--nb-danger); }

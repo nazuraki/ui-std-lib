@@ -1,6 +1,6 @@
 /* luminous-precision — badge: pill chip, 15% tint of its hue behind
  * full-saturation text */
-.nb-badge {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-badge {
   display: inline-block;
   padding: 0.15rem var(--nb-space-2);
   background: rgba(255, 255, 255, 0.08);
@@ -12,8 +12,8 @@
   font-weight: var(--nb-font-weight-medium);
   letter-spacing: var(--nb-tracking-wide);
 }
-.nb-badge--primary { background: rgba(198, 165, 255, 0.15); color: var(--nb-primary); }
-.nb-badge--info    { background: rgba(131, 183, 255, 0.15); color: var(--nb-info); }
-.nb-badge--success { background: rgba(71, 227, 78, 0.15);   color: var(--nb-success); }
-.nb-badge--warning { background: rgba(255, 184, 108, 0.15); color: var(--nb-warning); }
-.nb-badge--danger  { background: rgba(255, 77, 109, 0.15);  color: var(--nb-danger); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-badge--primary { background: rgba(198, 165, 255, 0.15); color: var(--nb-primary); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-badge--info    { background: rgba(131, 183, 255, 0.15); color: var(--nb-info); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-badge--success { background: rgba(71, 227, 78, 0.15);   color: var(--nb-success); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-badge--warning { background: rgba(255, 184, 108, 0.15); color: var(--nb-warning); }
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-badge--danger  { background: rgba(255, 77, 109, 0.15);  color: var(--nb-danger); }

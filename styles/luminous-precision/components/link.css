@@ -1,6 +1,6 @@
 /* luminous-precision — nav link: glass list row; hover shifts the indigo and
  * lights a 2px electric-teal bar on the left edge */
-.nb-link {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-link {
   display: flex;
   align-items: baseline;
   gap: var(--nb-space-3);
@@ -21,7 +21,7 @@
     color var(--nb-transition),
     box-shadow var(--nb-transition);
 }
-.nb-link:hover {
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-link:hover {
   background: var(--nb-surface);
   color: var(--nb-accent);
   box-shadow:
@@ -29,7 +29,7 @@
     0 0 12px var(--nb-accent-glow);
 }
 
-@keyframes nb-pulse-glow {
+@keyframes nb-lp-pulse-glow {
   0%,
   100% {
     box-shadow: 0 0 5px rgba(198, 165, 255, 0.15);
@@ -40,7 +40,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nb-link {
+  :where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-link {
     transition: none;
   }
 }

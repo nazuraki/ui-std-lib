@@ -1,5 +1,5 @@
 /* summer-cloud — button: pill-shaped, bouncy, tinted-shadow lift */
-.nb-btn {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -20,77 +20,77 @@
     box-shadow 0.2s ease,
     transform 0.2s var(--nb-ease-bounce);
 }
-.nb-btn:hover,
-.nb-btn:focus-visible {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:hover,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:focus-visible {
   background: rgba(255, 255, 255, 0.6);
   border-color: var(--nb-primary-border);
   color: var(--nb-primary);
   transform: scale(1.03);
   outline: none;
 }
-.nb-btn:focus-visible {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:focus-visible {
   box-shadow: 0 0 0 4px var(--nb-accent-glow);
 }
-.nb-btn:active {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:active {
   transform: scale(0.95);
 }
 
 /* Primary — the solid violet CTA. One per view. */
-.nb-btn--primary {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--primary {
   background: var(--nb-primary);
   border-color: transparent;
   color: #fff;
   font-weight: var(--nb-font-weight-bold);
   box-shadow: var(--nb-shadow-raised);
 }
-.nb-btn--primary:hover {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--primary:hover {
   background: var(--nb-primary-bright);
   color: #fff;
   box-shadow: var(--nb-shadow-raised-hover);
 }
-.nb-btn--primary:focus-visible {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--primary:focus-visible {
   background: var(--nb-primary-bright);
   color: #fff;
   box-shadow: var(--nb-shadow-raised-hover), 0 0 0 4px var(--nb-primary-glow);
 }
 
 /* Accent — glass with a sky-blue edge, for the secondary path. */
-.nb-btn--accent {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--accent {
   border-color: var(--nb-accent);
   color: var(--nb-accent-deep);
 }
-.nb-btn--accent:hover,
-.nb-btn--accent:focus-visible {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--accent:hover,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--accent:focus-visible {
   color: var(--nb-accent-deep);
   box-shadow: 0 0 0 4px var(--nb-accent-glow);
 }
 
 /* Ghost — no chrome until hovered. */
-.nb-btn--ghost {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--ghost {
   background: none;
   border-color: transparent;
   box-shadow: none;
 }
-.nb-btn--ghost:hover,
-.nb-btn--ghost:focus-visible {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--ghost:hover,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--ghost:focus-visible {
   background: var(--nb-sky-tint);
 }
 
-.nb-btn--danger {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--danger {
   background: var(--nb-danger-deep);
   border-color: transparent;
   color: #fff;
   font-weight: var(--nb-font-weight-bold);
   box-shadow: 0 4px 14px rgba(204, 31, 31, 0.39);
 }
-.nb-btn--danger:hover,
-.nb-btn--danger:focus-visible {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--danger:hover,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--danger:focus-visible {
   background: var(--nb-danger);
   color: #4a0000;
   box-shadow: 0 6px 20px rgba(255, 77, 77, 0.5);
 }
 
-.nb-btn:disabled {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
@@ -98,12 +98,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nb-btn {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn {
     transition: background var(--nb-transition), color var(--nb-transition);
   }
-  .nb-btn:hover,
-  .nb-btn:focus-visible,
-  .nb-btn:active {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:hover,
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:focus-visible,
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:active {
     transform: none;
   }
 }

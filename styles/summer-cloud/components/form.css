@@ -1,8 +1,8 @@
 /* summer-cloud — form controls: input, textarea, select, checkbox, radio, switch
  * Fields are sunken (no resting border) and bloom a sky-blue ring on focus. */
-.nb-input,
-.nb-select,
-.nb-textarea {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-input,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-select,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-textarea {
   display: block;
   width: 100%;
   padding: 0.75rem var(--nb-space-3);
@@ -15,35 +15,35 @@
   font-size: 16px;
   transition: border-color var(--nb-transition), box-shadow var(--nb-transition);
 }
-.nb-select {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-select {
   appearance: none;
   padding-right: 2.25rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23484457' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
 }
-.nb-input::placeholder,
-.nb-textarea::placeholder {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-input::placeholder,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-textarea::placeholder {
   color: var(--nb-outline);
 }
-.nb-input:focus,
-.nb-select:focus,
-.nb-textarea:focus {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-input:focus,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-select:focus,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-textarea:focus {
   outline: none;
   border-color: var(--nb-accent);
   box-shadow: 0 0 0 4px var(--nb-accent-glow);
 }
-.nb-input[aria-invalid="true"],
-.nb-textarea[aria-invalid="true"] {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-input[aria-invalid="true"],
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-textarea[aria-invalid="true"] {
   border-color: var(--nb-danger);
 }
-.nb-input[aria-invalid="true"]:focus,
-.nb-textarea[aria-invalid="true"]:focus {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-input[aria-invalid="true"]:focus,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-textarea[aria-invalid="true"]:focus {
   box-shadow: 0 0 0 4px rgba(255, 77, 77, 0.2);
 }
 
 /* Labels are the mono voice: small, tracked, utility-grade. */
-.nb-label {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-label {
   display: block;
   margin-bottom: var(--nb-space-1);
   padding-left: var(--nb-space-1);
@@ -54,13 +54,13 @@
   letter-spacing: var(--nb-tracking-wide);
 }
 
-.nb-field {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-field {
   margin-bottom: var(--nb-space-3);
 }
 
 /* checkbox & radio */
-.nb-checkbox,
-.nb-radio {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-checkbox,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-radio {
   appearance: none;
   width: 1.25rem;
   height: 1.25rem;
@@ -73,30 +73,30 @@
   transition: background var(--nb-transition), border-color var(--nb-transition),
     box-shadow var(--nb-transition);
 }
-.nb-radio {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-radio {
   border-radius: 50%;
 }
-.nb-checkbox:checked,
-.nb-radio:checked {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-checkbox:checked,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-radio:checked {
   background: var(--nb-primary);
   border-color: var(--nb-primary);
 }
-.nb-checkbox:checked {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-checkbox:checked {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1.5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
 }
-.nb-radio:checked {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-radio:checked {
   box-shadow: inset 0 0 0 4px var(--nb-surface);
 }
-.nb-checkbox:focus-visible,
-.nb-radio:focus-visible,
-.nb-switch:focus-visible {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-checkbox:focus-visible,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-radio:focus-visible,
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-switch:focus-visible {
   outline: none;
   border-color: var(--nb-accent);
   box-shadow: 0 0 0 4px var(--nb-accent-glow);
 }
-.nb-choice {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-choice {
   display: inline-flex;
   align-items: center;
   gap: var(--nb-space-2);
@@ -106,7 +106,7 @@
 }
 
 /* switch — the cloud-toggle: oversized, squishy, green when live */
-.nb-switch {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-switch {
   appearance: none;
   width: 3rem;
   height: 1.75rem;
@@ -119,7 +119,7 @@
   position: relative;
   transition: background var(--nb-transition), border-color var(--nb-transition);
 }
-.nb-switch::after {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-switch::after {
   content: "";
   position: absolute;
   top: 2px;
@@ -131,16 +131,16 @@
   box-shadow: 0 2px 6px rgba(93, 43, 255, 0.2);
   transition: transform var(--nb-transition) var(--nb-ease-bounce);
 }
-.nb-switch:checked {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-switch:checked {
   background: var(--nb-success);
   border-color: var(--nb-success);
 }
-.nb-switch:checked::after {
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-switch:checked::after {
   transform: translateX(1.25rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .nb-switch::after {
+  :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-switch::after {
     transition: none;
   }
 }
