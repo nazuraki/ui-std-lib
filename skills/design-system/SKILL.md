@@ -18,12 +18,7 @@ component styles in an app — consume the system.
    inventory below. App-local components are only for genuinely app-specific
    composites — and should still be built from `nb-*` classes.
 3. **Read the style's `design.md`** before designing new screens — it states
-   the aesthetic rules that the CSS alone does not encode:
-   - `styles/neon-butterfly/design.md` — when lilac vs lime, uppercase
-     conventions, glow-not-shadow elevation.
-   - `styles/summer-cloud/design.md` — violet as the only loud color, sky blue
-     as the interactive signal, pills, blur-and-tinted-shadow elevation, the
-     mandatory sky gradient.
+   the aesthetic rules that the CSS alone does not encode.
 4. **Gaps go upstream.** A missing component belongs in `ui-std-lib` as a PR,
    not in the app. File an issue on `nazuraki/ui-std-lib` if not building it now.
 
