@@ -1,0 +1,12 @@
+/* luminous-precision — card: glass pane with a lit top edge */
+.nb-card {
+  padding: var(--nb-space-4);
+  background: var(--nb-surface-glass);
+  border: 1px solid var(--nb-border);
+  border-top-color: var(--nb-border-lit);
+  border-radius: var(--nb-radius-lg);
+  backdrop-filter: blur(var(--nb-blur));
+  color: var(--nb-on-surface);
+}
+.nb-card > :first-child { margin-top: 0; }
+.nb-card > :last-child { margin-bottom: 0; }

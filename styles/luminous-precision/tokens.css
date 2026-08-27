@@ -1,0 +1,55 @@
+/* luminous-precision — design tokens
+ * Source of truth for the luminous-precision theme. Consume via:
+ *   @import "@nazuraki/styles/luminous-precision/tokens";
+ * or pull the whole theme with ./index.css.
+ *
+ * Token names mirror neon-butterfly's --nb-* contract so themes stay
+ * swappable; names marked (extra) are additions this theme needs and that
+ * neon-butterfly does not define.
+ */
+:root {
+  /* color */
+  --nb-bg: #0a0c10;
+  --nb-bg-blend: #111319;
+  --nb-surface: #1a1d29;
+  --nb-surface-sunken: #0c0e14; /* (extra) inset fields, log wells */
+  --nb-surface-glass: rgba(26, 29, 41, 0.4);
+  --nb-on-surface: #e2e2eb;
+  --nb-faint: #958e9b;
+  --nb-primary: #c6a5ff;
+  --nb-primary-glow: rgba(198, 165, 255, 0.35);
+  --nb-primary-border: rgba(198, 165, 255, 0.6);
+  --nb-on-primary: #16101f; /* (extra) text on solid orchid fills */
+  --nb-accent: #00f5ff;
+  --nb-accent-glow: rgba(0, 245, 255, 0.3);
+  --nb-border: rgba(255, 255, 255, 0.08);
+  --nb-border-lit: rgba(255, 255, 255, 0.2); /* (extra) lit top edge of glass panes */
+
+  /* semantic color */
+  --nb-info: #83b7ff;
+  --nb-success: #47e34e;
+  --nb-warning: #ffb86c;
+  --nb-danger: #ff4d6d;
+
+  /* typography */
+  --nb-font-display: "Sora", ui-sans-serif, system-ui, sans-serif; /* (extra) headlines */
+  --nb-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --nb-font-weight: 400;
+  --nb-font-weight-medium: 600; /* (extra) labels, interactive text */
+  --nb-font-weight-bold: 700;
+  --nb-text-sm: 14px;
+  --nb-tracking-wide: 0.05em;
+
+  /* shape & effects */
+  --nb-radius: 0.5rem;
+  --nb-radius-lg: 1rem; /* (extra) cards and large containers */
+  --nb-blur: 12px;
+  --nb-transition: 0.3s;
+
+  /* spacing (8px rhythm) */
+  --nb-space-1: 0.25rem;
+  --nb-space-2: 0.5rem;
+  --nb-space-3: 1rem;
+  --nb-space-4: 1.5rem;
+  --nb-space-5: 2rem;
+}
