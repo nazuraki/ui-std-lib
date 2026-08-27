@@ -74,3 +74,16 @@ Class prefix `nb-` (shared token/class contract with the other themes).
   the teal left bar.
 - **Progress** `.nb-progress`, **Spinner** `.nb-spinner` — glowing orchid
   indicators (`--accent` bar variant in teal).
+
+## Code syntax
+
+Tokens `--nb-code-*`, part of the baseline contract. Orchid keywords, teal
+types, info-blue functions, amber numbers, success-green strings, soft-rose
+variables, dimmed-faint comments, faint meta — palette voices reused, never
+new hues for decoration.
+
+## Scoping
+
+Every rule is guarded by `data-nb-style="luminous-precision"` (self or
+ancestor), wrapped in zero-specificity `:where()`. Set the attribute on
+`<html>` for a page or on a container for an embedded island.

@@ -60,3 +60,15 @@ Class prefix `nb-`. Variants use BEM-ish modifiers (`nb-btn--accent`).
 - **Tabs** `.nb-tabs`/`.nb-tab`/`.nb-tabpanel` — active tab underlined in lilac with text glow.
 - **Table** `.nb-table` — lilac header rule, glass row hover.
 - **Progress** `.nb-progress`, **Spinner** `.nb-spinner` — glowing lilac indicators.
+
+## Code syntax
+
+Tokens `--nb-code-*`, part of the baseline contract. Lilac keywords, neon-lime
+strings, gold numbers, info-cyan functions, light-cyan types, softened-pink
+variables, dimmed-faint comments, faint meta.
+
+## Scoping
+
+Every rule is guarded by `data-nb-style="neon-butterfly"` (self or ancestor),
+wrapped in zero-specificity `:where()`. Set the attribute on `<html>` for a
+page or on a container for an embedded island.

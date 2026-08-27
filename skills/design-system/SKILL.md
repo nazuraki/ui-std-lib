@@ -24,29 +24,45 @@ component styles in an app — consume the system.
 
 ## Consuming
 
+Every rule is scoped: nothing applies until an element carries
+`data-nb-style="<theme>"`. Put it on `<html>` for a page the app owns, or on a
+mount container to theme one subtree (embed-safe: the CSS is inert everywhere
+else, and the `:where()` guards are zero-specificity so any consumer rule
+overrides). Several themes can load together; swapping is an attribute flip.
+
 React apps:
 
 ```tsx
-import "@nazuraki/styles/neon-butterfly"; // or "@nazuraki/styles/summer-cloud"
+import "@nazuraki/styles/luminous-precision"; // one theme…
+import "@nazuraki/styles/all";                // …or all of them, for runtime switching
 import { Button, Card, Dialog, Tabs, Field, Input, Alert } from "@nazuraki/ui-react";
 ```
 
-Themes are drop-in swappable: both define the same `--nb-*` tokens and the same
-`nb-*` classes, so switching the CSS import restyles the app without touching
-markup.
+```html
+<html data-nb-style="luminous-precision">
+```
+
+Themes are drop-in swappable: all define the same `--nb-*` baseline tokens
+(enforced by the contract test — including `--nb-code-*` syntax colors and a
+`color-scheme`) and the same `nb-*` classes, so changing the attribute restyles
+the app without touching markup.
+
+`@nazuraki/styles/manifest` is the machine-readable roster — theme names,
+scheme (`dark`/`light`), and Google Fonts URLs. Validate configured theme names
+and inject font links from it rather than hardcoding lists, so new themes work
+by name alone.
 
 Both packages are on the public npm registry — no `.npmrc` needed.
 
 Plain HTML / no-build apps (jsDelivr, pin a tag):
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nazuraki/ui-std-lib@main/styles/neon-butterfly/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/nazuraki/ui-std-lib@v0.3.0/styles/luminous-precision/index.css">
 ```
 
-Include the theme's webfont links — the system does not bundle fonts.
-`neon-butterfly` needs JetBrains Mono (450, 700); `summer-cloud` needs Plus
-Jakarta Sans (400, 600, 700, 800), Inter (400, 600), and JetBrains Mono (500),
-plus `.nb-bg` on `<body>` for its sky gradient.
+Include the theme's webfont links (URLs in the manifest) — the system does not
+bundle fonts. `summer-cloud` also wants `.nb-bg` on `<body>` for its sky
+gradient.
 
 ## Component inventory
 
@@ -76,13 +92,17 @@ per style.
 
 ## Adding a new style
 
-Copy the `styles/neon-butterfly/` layout: `tokens.css` (same `--nb-*` names,
-different values), `base.css`, `components/*.css`, `index.css`, and a
-`design.md` capturing the aesthetic. Then register it in three places:
+Copy the `styles/neon-butterfly/` layout: `tokens.css` (the full baseline
+`--nb-*` set, every rule guarded by `data-nb-style="<name>"`, plus a
+`color-scheme`), `base.css`, `components/*.css` (guarded selectors,
+theme-unique `@keyframes` names), `index.css`, and a `design.md` capturing the
+aesthetic. Then register it:
 
-1. `styles/package.json` — add the directory to `files` and its four `exports`
+1. `styles/manifest.json` — name, scheme, font links.
+2. `styles/package.json` — add the directory to `files` and its four `exports`
    entries (theme, `/tokens`, `/base`, `/components/*`).
-2. `site/index.html` — the `STYLES` array, plus any webfont `<link>`s.
 3. `README.md` — the themes table.
 
-The GH Pages workflow copies `styles/*/` automatically; no CI change needed.
+Run `pnpm --filter @nazuraki/styles test` — the contract test enforces all of
+the above and is the definition of done. The showcase and the GH Pages
+workflow pick the theme up from the manifest automatically.
