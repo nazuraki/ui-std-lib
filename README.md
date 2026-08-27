@@ -17,6 +17,7 @@ live, with a style selector. Deployed from `site/` on push to main.
 | --- | --- |
 | `neon-butterfly` | Dark navy + lilac + neon lime, JetBrains Mono, glass surfaces with glow hovers. Derived from the switchboard landing page. |
 | `summer-cloud` | Light sky gradient + vivid violet + sky blue, Plus Jakarta Sans / Inter / JetBrains Mono, frosted glass with bouncy pill buttons. Derived from the Summer Cloud retail UI system. |
+| `luminous-precision` | Deep obsidian + vibrant orchid + electric teal, Sora headlines over JetBrains Mono, glass panes with lit top edges and glow-based elevation. Professional evolution of neon-butterfly, derived from the InfraPulse Stitch mockups. |
 
 Each theme ships a `design.md` — a Stitch-compatible written spec of the
 aesthetic (palette, typography, shape rules, component inventory). Read it
@@ -49,6 +50,7 @@ font stack falls back to a system family.
 | --- | --- |
 | `neon-butterfly` | JetBrains Mono (450, 700) |
 | `summer-cloud` | Plus Jakarta Sans (400, 600, 700, 800), Inter (400, 600), JetBrains Mono (500) |
+| `luminous-precision` | Sora (500, 600, 700), JetBrains Mono (400, 600, 700) |
 
 `summer-cloud` also expects `.nb-bg` on `<body>` — the sky gradient is what its
 frosted-glass surfaces read against.

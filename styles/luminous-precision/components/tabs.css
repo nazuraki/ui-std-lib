@@ -1,0 +1,33 @@
+/* luminous-precision — tabs: active tab carries the electric-teal path */
+.nb-tabs {
+  display: flex;
+  gap: var(--nb-space-2);
+  border-bottom: 1px solid var(--nb-border);
+}
+.nb-tab {
+  padding: var(--nb-space-2) var(--nb-space-3);
+  margin-bottom: -1px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--nb-faint);
+  text-transform: uppercase;
+  font-family: var(--nb-font-mono);
+  font-weight: var(--nb-font-weight-medium);
+  font-size: var(--nb-text-sm);
+  letter-spacing: var(--nb-tracking-wide);
+  cursor: pointer;
+  transition: color var(--nb-transition), border-color var(--nb-transition);
+}
+.nb-tab:hover {
+  color: var(--nb-on-surface);
+}
+.nb-tab--active,
+.nb-tab[aria-selected="true"] {
+  color: var(--nb-accent);
+  border-bottom-color: var(--nb-accent);
+  text-shadow: 0 0 8px var(--nb-accent-glow);
+}
+.nb-tabpanel {
+  padding: var(--nb-space-3) 0;
+}
