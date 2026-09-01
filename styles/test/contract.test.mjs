@@ -148,7 +148,7 @@ for (const theme of themeDirs) {
     assert.deepEqual(selectors, []);
     const names = imports.map((i) => i.match(/"\.\/(.+)\.css"/)?.[1]);
     const expected = themeCssFiles(theme).map((f) =>
-      f.slice(join(ROOT, theme).length + 1).replace(/\.css$/, "")
+      f.slice(join(ROOT, theme).length + 1).replace(/\.css$/, "").split("\\").join("/")
     );
     assert.deepEqual([...names].sort(), [...expected].sort());
   });
