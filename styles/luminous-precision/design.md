@@ -74,6 +74,11 @@ Class prefix `nb-` (shared token/class contract with the other themes).
   the teal left bar.
 - **Progress** `.nb-progress`, **Spinner** `.nb-spinner` — glowing orchid
   indicators (`--accent` bar variant in teal).
+- **Muted text** `.nb-muted` — faint secondary/empty-state text;
+  `color: var(--nb-faint)`, italic.
+- **Pre / log block** `.nb-pre` — command/log `<pre>`; the surface-sunken
+  well (already documented above as this theme's "log wells" token),
+  hairline border, radius, small mono, horizontal scroll.
 
 ## Code syntax
 

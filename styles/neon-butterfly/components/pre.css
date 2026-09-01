@@ -1,0 +1,13 @@
+/* neon-butterfly — command / log block
+ * Styled <pre> for shell commands or short log output: sunken well,
+ * hairline border, small mono, scrolls horizontally instead of wrapping. */
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-pre {
+  margin: 0;
+  padding: var(--nb-space-3) var(--nb-space-4);
+  background: var(--nb-surface-sunken);
+  border: 1px solid var(--nb-border);
+  border-radius: var(--nb-radius);
+  font-family: var(--nb-font-mono);
+  font-size: var(--nb-text-sm);
+  overflow-x: auto;
+}
