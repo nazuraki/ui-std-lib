@@ -51,7 +51,8 @@ Class prefix `nb-`. Variants use BEM-ish modifiers (`nb-btn--accent`).
 
 - **Card** `.nb-card` — frosted glass panel.
 - **NavLink** `.nb-link` — the switchboard link: `>` chevron turns lime on hover.
-- **Button** `.nb-btn` — `--primary`, `--accent`, `--danger` variants.
+- **Button** `.nb-btn` — `--primary`, `--accent`, `--danger` variants; `--sm`
+  compact size (badge-scaled) for inline/table-row actions.
 - **Form** `.nb-input`, `.nb-textarea`, `.nb-select`, `.nb-label`, `.nb-field`,
   `.nb-checkbox`, `.nb-radio`, `.nb-switch`, `.nb-choice` — checked states glow lime.
 - **Badge** `.nb-badge` + semantic modifiers.

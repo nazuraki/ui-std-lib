@@ -59,7 +59,8 @@ Class prefix `nb-` (shared token/class contract with the other themes).
 - **NavLink** `.nb-link` — glass list row; hover shifts to solid indigo and
   lights a 2px teal bar on the left edge.
 - **Button** `.nb-btn` — ghost by default; `--primary` is the one solid fill
-  (orchid, dark text), `--accent` teal ghost, `--danger` rose ghost.
+  (orchid, dark text), `--accent` teal ghost, `--danger` rose ghost. `--sm` is a
+  compact size scaled to `.nb-badge`, for inline and table-row actions.
 - **Form** `.nb-input`, `.nb-textarea`, `.nb-select`, `.nb-label`,
   `.nb-field`, `.nb-checkbox`, `.nb-radio`, `.nb-switch`, `.nb-choice` —
   checked/focus states glow teal.

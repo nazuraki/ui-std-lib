@@ -20,6 +20,12 @@
     box-shadow 0.2s ease,
     transform 0.2s var(--nb-ease-bounce);
 }
+/* --sm: compact size for inline/table-row actions, scaled to .nb-badge
+ * (composes with any variant; keeps the pill radius from .nb-btn). */
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn--sm {
+  padding: 0.25rem 0.75rem;
+  font-size: 12px;
+}
 :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:hover,
 :where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-btn:focus-visible {
   background: rgba(255, 255, 255, 0.6);

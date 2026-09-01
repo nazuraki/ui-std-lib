@@ -83,7 +83,9 @@ theme-agnostic). Variants use BEM-ish modifiers (`nb-btn--primary`).
 - **NavLink** `.nb-link` — pill, sky-tint wash, `→` slides 4px on hover;
   `--active` / `[aria-current=page]` becomes the violet underline rule.
 - **Button** `.nb-btn` — glass by default; `--primary` (solid violet CTA, one
-  per view), `--accent` (sky-edged glass), `--ghost`, `--danger`.
+  per view), `--accent` (sky-edged glass), `--ghost`, `--danger`. `--sm` is a
+  compact size scaled to `.nb-badge`, for inline/table-row actions; the pill
+  shape is kept.
 - **Form** `.nb-input`, `.nb-textarea`, `.nb-select`, `.nb-label`, `.nb-field`,
   `.nb-checkbox`, `.nb-radio`, `.nb-switch`, `.nb-choice` — sunken fields, no
   resting border, sky-blue ring on focus. The switch is the oversized
