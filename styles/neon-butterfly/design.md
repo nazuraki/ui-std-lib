@@ -60,6 +60,11 @@ Class prefix `nb-`. Variants use BEM-ish modifiers (`nb-btn--accent`).
 - **Tabs** `.nb-tabs`/`.nb-tab`/`.nb-tabpanel` — active tab underlined in lilac with text glow.
 - **Table** `.nb-table` — lilac header rule, glass row hover.
 - **Progress** `.nb-progress`, **Spinner** `.nb-spinner` — glowing lilac indicators.
+- **Muted text** `.nb-muted` — faint secondary/empty-state text;
+  `color: var(--nb-faint)` only, no italic — this theme's mono/uppercase
+  terminal voice never reaches for a literary flourish.
+- **Pre / log block** `.nb-pre` — command/log `<pre>`; sunken background,
+  hairline border, radius, small mono, horizontal scroll.
 
 ## Code syntax
 
