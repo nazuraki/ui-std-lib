@@ -1,6 +1,6 @@
 {
   "name": "@nazuraki/ui-react",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Shared React components styled by @nazuraki/styles themes.",
   "license": "MIT",
   "repository": {
@@ -22,7 +22,8 @@
     }
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "peerDependencies": {
     "react": ">=18"
