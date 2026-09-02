@@ -168,6 +168,21 @@ for (const theme of themeDirs) {
   });
 }
 
+test("every theme's button.css declares a guarded .nb-btn--sm compact variant", () => {
+  // The compact size is part of the button contract: every theme must carry it
+  // so a screen keeps its inline/table-row actions when it swaps data-nb-style.
+  for (const theme of themeDirs) {
+    const file = join(ROOT, theme, "components", "button.css");
+    const { selectors } = parseCss(readFileSync(file, "utf-8"));
+    const guard = `[data-nb-style="${theme}"]`;
+    const sm = selectors.filter((s) => /\.nb-btn--sm(?![\w-])/.test(s));
+    assert.ok(sm.length > 0, `${theme}: button.css is missing a .nb-btn--sm rule`);
+    for (const sel of sm) {
+      assert.ok(sel.includes(guard), `${theme}: unguarded .nb-btn--sm selector: ${sel}`);
+    }
+  }
+});
+
 test("keyframe names are nb-prefixed and unique across all themes", () => {
   const seen = new Map();
   for (const theme of themeDirs) {

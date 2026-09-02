@@ -18,6 +18,12 @@
     border-color var(--nb-transition),
     color var(--nb-transition);
 }
+/* --sm: compact size for inline/table-row actions, scaled to .nb-badge
+ * (composes with any variant — sets size only). */
+:where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-btn--sm {
+  padding: 0.15rem var(--nb-space-2);
+  font-size: 12px;
+}
 :where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-btn:hover,
 :where([data-nb-style="neon-butterfly"], [data-nb-style="neon-butterfly"] *).nb-btn:focus-visible {
   border-color: var(--nb-primary-border);

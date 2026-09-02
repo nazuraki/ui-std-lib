@@ -19,6 +19,12 @@
     color var(--nb-transition),
     box-shadow var(--nb-transition);
 }
+/* --sm: compact size for inline/table-row actions, scaled to .nb-badge
+ * (composes with any variant — sets size only). */
+:where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn--sm {
+  padding: 0.15rem var(--nb-space-2);
+  font-size: 12px;
+}
 :where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn:hover,
 :where([data-nb-style="luminous-precision"], [data-nb-style="luminous-precision"] *).nb-btn:focus-visible {
   border-color: var(--nb-primary-border);
