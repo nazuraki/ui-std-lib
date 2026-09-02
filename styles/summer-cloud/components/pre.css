@@ -1,0 +1,16 @@
+/* summer-cloud — command / log block
+ * Styled <pre> for shell commands or short log output: sunken well, small
+ * mono, scrolls horizontally instead of wrapping. Uses --nb-outline, not
+ * --nb-border — border here is a glass-only token (translucent white) and
+ * would be invisible on this opaque surface; outline is this theme's own
+ * "hairline on opaque surfaces" token. */
+:where([data-nb-style="summer-cloud"], [data-nb-style="summer-cloud"] *).nb-pre {
+  margin: 0;
+  padding: var(--nb-space-3) var(--nb-space-4);
+  background: var(--nb-surface-sunken);
+  border: 1px solid var(--nb-outline);
+  border-radius: var(--nb-radius);
+  font-family: var(--nb-font-mono);
+  font-size: var(--nb-text-sm);
+  overflow-x: auto;
+}

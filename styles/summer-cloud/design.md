@@ -98,6 +98,13 @@ theme-agnostic). Variants use BEM-ish modifiers (`nb-btn--primary`).
 - **Table** `.nb-table` — mono uppercase headers, sky-tint row hover; add
   `.nb-num` to numeric cells for the mono/right-aligned treatment.
 - **Progress** `.nb-progress`, **Spinner** `.nb-spinner` — glowing violet.
+- **Muted text** `.nb-muted` — faint secondary/empty-state text;
+  `color: var(--nb-faint)`, italic — a friendly, soft touch consistent with
+  the theme's airy, optimistic voice.
+- **Pre / log block** `.nb-pre` — command/log `<pre>`; sunken background,
+  `--nb-outline` hairline (not `--nb-border`, which is the glass-only token
+  and would be invisible on this opaque surface), radius, small mono,
+  horizontal scroll.
 
 ## Deviations from the Stitch source
 
